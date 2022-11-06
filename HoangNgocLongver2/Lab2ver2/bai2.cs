@@ -16,10 +16,10 @@ namespace Lab2ver2
         {
             Console.OutputEncoding = Encoding.Unicode;
             Console.InputEncoding = Encoding.Unicode;
-            Tracuu();
+            Dictionary();
         }
         //Ham tu dien
-        static void Tracuu()
+        static void Dictionary()
         {
             //Đọc và thêm dữ liệu từ text vào Dictionary
             string[] FileContents = File.ReadAllLines("vnedict.txt");

@@ -11,9 +11,9 @@ namespace Lab1
         static void Main(string[] args)
         {
             OddEven();
-            SNT();
+            PrimeNumber();
             Sum();
-            QS();
+            QuickSortFile();
         }
         //Class đọc file
         public static class Data
@@ -54,7 +54,7 @@ namespace Lab1
         }
 
         //ghi số nguyên tố ra file
-        static void SNT()
+        static void PrimeNumber()
         {
             using (var Prime = File.CreateText("Prime.txt"))
             {
@@ -79,7 +79,7 @@ namespace Lab1
             }
         }
         //Hàm ghi Quicksort ra file
-        static void QS()
+        static void QuickSortFile()
         {
             using (var Quicksort = File.CreateText("Quicksort.txt"))
             {
