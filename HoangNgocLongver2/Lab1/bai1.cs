@@ -15,33 +15,28 @@ namespace Lab1
             Sum();
             QS();
         }
-
-
+        //Class đọc file
+        public static class Data
+        {
+           public static string[] Number = File.ReadAllLines("number.dat");
+        }
         //Chẵn lẻ
         static void OddEven()
         {
-            string[] Number = File.ReadAllLines("number.dat");
             using (var odd = File.CreateText("odd.txt"))
             using (var even = File.CreateText("even.txt"))
             {
-                foreach (string line in Number)
+                foreach (string line in Data.Number)
                 {
                     int lines = Convert.ToInt32(line);
-                    if (lines % 2 == 0)
-                    {
-                        even.WriteLine(lines);
-                    }
-                    else
-                    {
-                        odd.WriteLine(lines);
-                    }
+                    (lines % 2 == 0 ? even : odd).WriteLine(lines);
 
                 }
             }
         }
 
 
-        //hàm kiểm tra số nguyên tố
+        //kiểm tra số nguyên tố
         static bool IsPrime(int number)
         {
             if (number <= 1) return false;
@@ -63,8 +58,7 @@ namespace Lab1
         {
             using (var Prime = File.CreateText("Prime.txt"))
             {
-                string[] Number = File.ReadAllLines("number.dat");
-                foreach (string line in Number)
+                foreach (string line in Data.Number)
                 {
                     int lines = Convert.ToInt32(line);
                     if (IsPrime(lines))
@@ -80,8 +74,7 @@ namespace Lab1
         {
             using (var Sum = File.CreateText("Sum.txt"))
             {
-                string[] Number = File.ReadAllLines("number.dat");
-                long sum = Number.Sum(x => Convert.ToInt64(x));
+                long sum = Data.Number.Sum(x => Convert.ToInt64(x));
                 Sum.WriteLine(sum);
             }
         }
@@ -148,20 +141,6 @@ namespace Lab1
                 var temp = ar[i];
                 ar[i] = ar[j];
                 ar[j] = temp;
-            }
-            static bool IsPrime(int number)
-            {
-                if (number <= 1) return false;
-                if (number == 2) return true;
-                if (number % 2 == 0) return false;
-
-                var boundary = (int)Math.Floor(Math.Sqrt(number));
-
-                for (int i = 3; i <= boundary; i += 2)
-                    if (number % i == 0)
-                        return false;
-
-                return true;
             }
         }
     }

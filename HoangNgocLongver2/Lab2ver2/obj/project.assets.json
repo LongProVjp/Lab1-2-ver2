@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CPC\\source\\repos\\Lab1\\Lab2ver2\\Lab2ver2.csproj",
+      "projectUniqueName": "C:\\Users\\CPC\\source\\repos\\HoangNgocLongver2\\Lab2ver2\\Lab2ver2.csproj",
       "projectName": "Lab2ver2",
-      "projectPath": "C:\\Users\\CPC\\source\\repos\\Lab1\\Lab2ver2\\Lab2ver2.csproj",
+      "projectPath": "C:\\Users\\CPC\\source\\repos\\HoangNgocLongver2\\Lab2ver2\\Lab2ver2.csproj",
       "packagesPath": "C:\\Users\\CPC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CPC\\source\\repos\\Lab1\\Lab2ver2\\obj\\",
+      "outputPath": "C:\\Users\\CPC\\source\\repos\\HoangNgocLongver2\\Lab2ver2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\CPC\\AppData\\Roaming\\NuGet\\NuGet.Config",

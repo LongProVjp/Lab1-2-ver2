@@ -18,9 +18,10 @@ namespace Lab2ver2
             Console.InputEncoding = Encoding.Unicode;
             Tracuu();
         }
-        //ham tu dien
+        //Ham tu dien
         static void Tracuu()
         {
+            //Đọc và thêm dữ liệu từ text vào Dictionary
             string[] FileContents = File.ReadAllLines("vnedict.txt");
             Dictionary<string, string> dict = new Dictionary<string, string>();
             foreach (string line in FileContents)
@@ -28,21 +29,14 @@ namespace Lab2ver2
                 var keyvalue = Regex.Match(line, @"(.*):(.*)");
                 dict.Add(keyvalue.Groups[1].Value.Trim(), keyvalue.Groups[2].Value.Trim());
             }
-
+            //Tra cuu input key => output value
             string keyinput = "";
             string keyitem = dict[keyinput];
             while (true)
             {
                 Console.WriteLine("Hãy nhập từ cần tra: ");
                 keyinput = Console.ReadLine();
-                if (dict.ContainsKey(keyinput))
-                {
-                    Console.WriteLine(dict[keyinput]);
-                }
-                else
-                {
-                    Console.WriteLine("Không có từ này trong từ điển");
-                }
+                Console.WriteLine(dict.ContainsKey(keyinput) ? dict[keyinput] : "Không có từ này trong từ điển");
             }
         }
     }
